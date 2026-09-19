@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="11-сынып Қазақстан тарихы, §7–8 бойынша 41 сұрақтық интерактивті тест тренажері." />
-    <title>Қазақстан тарихы §7–8 — тест тренажері</title>
+    <meta name="description" content="6–11-сыныптарға арналған Қазақстан тарихы және Дүниежүзі тарихы бойынша тақырыптық тест тренажерлері." />
+    <title>Тарих — тақырыптық тесттер</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23143f31'/%3E%3Cpath d='M17 18h30v8H36v25h-8V26H17z' fill='%23fffdf8'/%3E%3Ccircle cx='47' cy='47' r='8' fill='%23f2a143'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,19 +14,80 @@
   <body>
     <div class="page-shell">
       <header class="topbar">
-        <a class="brand" href="#" aria-label="Басты бет">
+        <a id="brand-home" class="brand" href="#" aria-label="Тарих тесттерінің басты беті">
           <span class="brand-mark" aria-hidden="true">Т</span>
           <span>Тарих тренажері</span>
         </a>
-        <div class="privacy-badge"><span></span> Сабаққа дайын</div>
+        <div class="privacy-badge"><span></span> 6–11-сынып</div>
       </header>
 
       <main>
-        <section id="home-screen" class="screen home-screen" aria-labelledby="home-title">
+        <section id="subject-screen" class="screen subject-screen" aria-labelledby="subject-title">
+          <div class="subject-heading">
+            <p class="eyebrow">Тақырыптық тесттер жинағы</p>
+            <h1 id="subject-title" class="subject-title">Тарих пәні</h1>
+            <p class="subject-lead">Пәнді таңдаңыз. Одан кейін сынып пен тақырып бойынша тестті бастай аласыз.</p>
+          </div>
+          <div class="subject-grid" aria-label="Пәнді таңдаңыз">
+            <button class="subject-card kazakhstan" type="button" data-subject="kazakhstan">
+              <span class="subject-icon" aria-hidden="true">Қ</span>
+              <span class="subject-card-copy">
+                <small>01 • Тесттер жинағы</small>
+                <strong>Қазақстан тарихы</strong>
+                <span>6–11-сынып • 1 дайын тақырып • 41 сұрақ</span>
+              </span>
+              <span class="subject-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="subject-card world" type="button" data-subject="world">
+              <span class="subject-icon" aria-hidden="true">Д</span>
+              <span class="subject-card-copy">
+                <small>02 • Тесттер жинағы</small>
+                <strong>Дүниежүзі тарихы</strong>
+                <span>6–11-сынып • Тақырыптар қосылады</span>
+              </span>
+              <span class="subject-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <section id="catalog-screen" class="screen catalog-screen hidden" aria-labelledby="catalog-title">
+          <button id="subjects-back-button" class="back-link" type="button">← Пәндер</button>
+          <div class="catalog-heading">
+            <div>
+              <p class="eyebrow">6–11-сынып</p>
+              <h1 id="catalog-title" class="catalog-title">Қазақстан тарихы</h1>
+              <p id="catalog-lead" class="catalog-lead">Сыныбыңызды таңдаңыз.</p>
+            </div>
+            <div class="catalog-summary" aria-label="Жинақ туралы">
+              <div><strong>6</strong><span>сынып</span></div>
+              <div><strong id="catalog-topic-total">1</strong><span>дайын тест</span></div>
+              <div><strong id="catalog-question-total">41</strong><span>сұрақ</span></div>
+            </div>
+          </div>
+          <div id="grade-grid" class="grade-grid" aria-label="Сыныпты таңдаңыз"></div>
+        </section>
+
+        <section id="grade-screen" class="screen grade-screen hidden" aria-labelledby="grade-title">
+          <button id="catalog-back-button" class="back-link" type="button">← Барлық сыныптар</button>
+          <div class="grade-heading">
+            <div>
+              <p id="grade-subject-name" class="eyebrow">Қазақстан тарихы</p>
+              <h1 id="grade-title" class="grade-title">11-сынып</h1>
+              <p id="grade-description" class="grade-description">Тақырыпты таңдап, тестті бастаңыз.</p>
+            </div>
+            <span id="grade-topic-count" class="count-badge">1 тақырып</span>
+          </div>
+          <div id="topic-list" class="topic-list" aria-live="polite"></div>
+        </section>
+
+        <section id="home-screen" class="screen home-screen hidden" aria-labelledby="home-title">
+          <div class="topic-nav">
+            <button id="grade-back-button" class="back-link" type="button">← 11-сынып тақырыптары</button>
+          </div>
           <div class="hero-copy">
             <div class="eyebrow">Қазақстан тарихы • 11-сынып</div>
             <h1 id="home-title">§7–8 бойынша<br /><span>біліміңді тексер.</span></h1>
-            <p class="hero-lead">Жүктелген құжаттағы тест сұрақтарын орындап, жауабыңды бірден тексер және қателеріңді соңында қайтала.</p>
+            <p class="hero-lead">Тест сұрақтарын орындап, жауабыңды бірден тексер және қателеріңді соңында қайтала.</p>
             <div class="hero-stats" aria-label="Тренажер мүмкіндіктері">
               <div><strong>41</strong><span>сұрақ</span></div>
               <div><strong>3</strong><span>режим</span></div>
@@ -41,7 +103,7 @@
             <div class="mode-grid">
               <button class="mode-option selected" data-mode="full" type="button">
                 <span class="mode-icon amber" aria-hidden="true">41</span>
-                <span><strong>Толық тест</strong><small>Құжаттағы барлық 41 сұрақ</small></span>
+                <span><strong>Толық тест</strong><small>Барлық 41 сұрақ</small></span>
                 <span class="radio-dot" aria-hidden="true"></span>
               </button>
               <button class="mode-option" data-mode="practice20" type="button">
@@ -56,7 +118,7 @@
               </button>
             </div>
             <button id="start-button" class="primary-button" type="button">Тестті бастау <span aria-hidden="true">→</span></button>
-            <p class="card-note">Дұрыс жауаптар құжаттағы қалың қаріппен берілген жауап кілті бойынша белгіленді.</p>
+            <p class="card-note">Дұрыс жауаптар жүктелген құжаттағы жауап кілті бойынша белгіленді.</p>
           </div>
         </section>
 
@@ -71,7 +133,7 @@
           </div>
 
           <article class="question-card">
-            <div class="question-meta"><span id="subject-chip" class="subject-chip">Қазақстан тарихы • §7–8</span><span id="question-number">Сұрақ 1</span></div>
+            <div class="question-meta"><span id="subject-chip" class="subject-chip">Қазақстан тарихы • 11-сынып • §7–8</span><span id="question-number">Сұрақ 1</span></div>
             <h2 id="question-title"></h2>
             <div id="answers" class="answers" role="group" aria-label="Жауап нұсқалары"></div>
             <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
@@ -100,7 +162,7 @@
         </section>
       </main>
 
-      <footer><span>§7–8 тест тренажері</span><span>Сабақ пен курсқа арналған • 2026</span></footer>
+      <footer><span>Тарих пәні • тесттер жинағы</span><span>Сабақ пен курсқа арналған • 2026</span></footer>
     </div>
     <script src="questions.js"></script>
     <script src="app.js"></script>
