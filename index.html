@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="11-сынып Қазақстан тарихы, §7–8 бойынша 41 сұрақтық интерактивті тест тренажері." />
+    <title>Қазақстан тарихы §7–8 — тест тренажері</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Басты бет">
+          <span class="brand-mark" aria-hidden="true">Т</span>
+          <span>Тарих тренажері</span>
+        </a>
+        <div class="privacy-badge"><span></span> Сабаққа дайын</div>
+      </header>
+
+      <main>
+        <section id="home-screen" class="screen home-screen" aria-labelledby="home-title">
+          <div class="hero-copy">
+            <div class="eyebrow">Қазақстан тарихы • 11-сынып</div>
+            <h1 id="home-title">§7–8 бойынша<br /><span>біліміңді тексер.</span></h1>
+            <p class="hero-lead">Жүктелген құжаттағы тест сұрақтарын орындап, жауабыңды бірден тексер және қателеріңді соңында қайтала.</p>
+            <div class="hero-stats" aria-label="Тренажер мүмкіндіктері">
+              <div><strong>41</strong><span>сұрақ</span></div>
+              <div><strong>3</strong><span>режим</span></div>
+              <div><strong>1×</strong><span>қате талдау</span></div>
+            </div>
+          </div>
+
+          <div class="mode-card" aria-labelledby="mode-title">
+            <div class="card-heading">
+              <span class="step-label">01</span>
+              <div><p>Тестті бастау</p><h2 id="mode-title">Режимді таңдаңыз</h2></div>
+            </div>
+            <div class="mode-grid">
+              <button class="mode-option selected" data-mode="full" type="button">
+                <span class="mode-icon amber" aria-hidden="true">41</span>
+                <span><strong>Толық тест</strong><small>Құжаттағы барлық 41 сұрақ</small></span>
+                <span class="radio-dot" aria-hidden="true"></span>
+              </button>
+              <button class="mode-option" data-mode="practice20" type="button">
+                <span class="mode-icon blue" aria-hidden="true">20</span>
+                <span><strong>Жаттығу тесті</strong><small>Кездейсоқ 20 сұрақ</small></span>
+                <span class="radio-dot" aria-hidden="true"></span>
+              </button>
+              <button class="mode-option" data-mode="quick10" type="button">
+                <span class="mode-icon green" aria-hidden="true">10</span>
+                <span><strong>Жылдам тексеру</strong><small>Кездейсоқ 10 сұрақ</small></span>
+                <span class="radio-dot" aria-hidden="true"></span>
+              </button>
+            </div>
+            <button id="start-button" class="primary-button" type="button">Тестті бастау <span aria-hidden="true">→</span></button>
+            <p class="card-note">Дұрыс жауаптар құжаттағы қалың қаріппен берілген жауап кілті бойынша белгіленді.</p>
+          </div>
+        </section>
+
+        <section id="quiz-screen" class="screen quiz-screen hidden" aria-labelledby="question-title">
+          <div class="quiz-header">
+            <button id="quit-button" class="text-button" type="button">← Шығу</button>
+            <div class="progress-wrap">
+              <div class="progress-meta"><span id="mode-label">Толық тест</span><strong id="progress-text">1 / 41</strong></div>
+              <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+            </div>
+            <div class="score-pill"><span>Ұпай</span><strong id="score-text">0</strong></div>
+          </div>
+
+          <article class="question-card">
+            <div class="question-meta"><span id="subject-chip" class="subject-chip">Қазақстан тарихы • §7–8</span><span id="question-number">Сұрақ 1</span></div>
+            <h2 id="question-title"></h2>
+            <div id="answers" class="answers" role="group" aria-label="Жауап нұсқалары"></div>
+            <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+            <button id="next-button" class="primary-button next-button hidden" type="button">Келесі сұрақ <span aria-hidden="true">→</span></button>
+          </article>
+        </section>
+
+        <section id="results-screen" class="screen results-screen hidden" aria-labelledby="results-title">
+          <div class="result-summary">
+            <p class="eyebrow">Тест аяқталды</p>
+            <div id="result-ring" class="result-ring"><div><strong id="percent-text">0%</strong><span>нәтиже</span></div></div>
+            <h2 id="results-title">Нәтижеңіз</h2>
+            <p id="result-message"></p>
+            <div class="result-numbers">
+              <div><span class="number-dot correct"></span><span>Дұрыс</span><strong id="correct-total">0</strong></div>
+              <div><span class="number-dot wrong"></span><span>Қате</span><strong id="wrong-total">0</strong></div>
+              <div><span class="number-dot total"></span><span>Барлығы</span><strong id="question-total">0</strong></div>
+            </div>
+            <button id="restart-button" class="primary-button" type="button">Жаңа тест бастау <span aria-hidden="true">↻</span></button>
+          </div>
+
+          <div class="review-panel">
+            <div class="review-heading"><div><p class="step-label">ТАЛДАУ</p><h3>Қате жауаптарды қайта қарау</h3></div><span id="mistake-count" class="mistake-count">0 қате</span></div>
+            <div id="review-list" class="review-list"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer><span>§7–8 тест тренажері</span><span>Сабақ пен курсқа арналған • 2026</span></footer>
+    </div>
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
